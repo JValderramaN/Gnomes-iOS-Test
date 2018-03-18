@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BBDDBEF560626D9F6CF38C1 /* Pods_GnomesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78E119E520601ABE393C0568 /* Pods_GnomesTests.framework */; };
+		AB9D5629205E463000CA9B9F /* GnomeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D5628205E463000CA9B9F /* GnomeFilter.swift */; };
+		AB9D562B205E465800CA9B9F /* GnomeListDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D562A205E465800CA9B9F /* GnomeListDetail.swift */; };
+		AB9D562D205E4EE100CA9B9F /* UIAlertController+Gnomes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9D562C205E4EE100CA9B9F /* UIAlertController+Gnomes.swift */; };
 		ABE5BA19205C534A00B4E0AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE5BA18205C534A00B4E0AB /* AppDelegate.swift */; };
 		ABE5BA1B205C534A00B4E0AB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE5BA1A205C534A00B4E0AB /* MainViewController.swift */; };
 		ABE5BA1E205C534A00B4E0AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE5BA1C205C534A00B4E0AB /* Main.storyboard */; };
@@ -22,6 +26,7 @@
 		ABE5BA55205C81EC00B4E0AB /* GnomeDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE5BA54205C81EC00B4E0AB /* GnomeDetailTableViewController.swift */; };
 		ABE5BA57205C830600B4E0AB /* ThumbnailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE5BA56205C830600B4E0AB /* ThumbnailTableViewCell.swift */; };
 		ABE5BA59205C906900B4E0AB /* GnomeListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE5BA58205C906900B4E0AB /* GnomeListDetailViewController.swift */; };
+		B3D5362A42B3A87D338F1B88 /* Pods_Gnomes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B1E184AC1C836AEBEC299D /* Pods_Gnomes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		70B1E184AC1C836AEBEC299D /* Pods_Gnomes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gnomes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78E119E520601ABE393C0568 /* Pods_GnomesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GnomesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		823C22E4B343BF47C16A82ED /* Pods-GnomesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GnomesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GnomesTests/Pods-GnomesTests.release.xcconfig"; sourceTree = "<group>"; };
+		87910BAE5EC53B752A973C45 /* Pods-Gnomes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gnomes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gnomes/Pods-Gnomes.debug.xcconfig"; sourceTree = "<group>"; };
+		AB9D5628205E463000CA9B9F /* GnomeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GnomeFilter.swift; path = "Gnomes/App/Modules/Main Module/Controller/GnomeFilter.swift"; sourceTree = SOURCE_ROOT; };
+		AB9D562A205E465800CA9B9F /* GnomeListDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GnomeListDetail.swift; path = "Gnomes/App/Modules/Main Module/Controller/GnomeListDetail.swift"; sourceTree = SOURCE_ROOT; };
+		AB9D562C205E4EE100CA9B9F /* UIAlertController+Gnomes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIAlertController+Gnomes.swift"; path = "Gnomes/App/Modules/Main Module/Controller/UIAlertController+Gnomes.swift"; sourceTree = SOURCE_ROOT; };
 		ABE5BA15205C534A00B4E0AB /* Gnomes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gnomes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE5BA18205C534A00B4E0AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABE5BA1A205C534A00B4E0AB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +66,8 @@
 		ABE5BA54205C81EC00B4E0AB /* GnomeDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GnomeDetailTableViewController.swift; sourceTree = "<group>"; };
 		ABE5BA56205C830600B4E0AB /* ThumbnailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailTableViewCell.swift; sourceTree = "<group>"; };
 		ABE5BA58205C906900B4E0AB /* GnomeListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GnomeListDetailViewController.swift; sourceTree = "<group>"; };
+		BE4A3445EACD66F8ED313BB2 /* Pods-Gnomes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gnomes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gnomes/Pods-Gnomes.release.xcconfig"; sourceTree = "<group>"; };
+		EEC2C508B3BEEE7F36842179 /* Pods-GnomesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GnomesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GnomesTests/Pods-GnomesTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3D5362A42B3A87D338F1B88 /* Pods_Gnomes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BBDDBEF560626D9F6CF38C1 /* Pods_GnomesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +96,8 @@
 				ABE5BA17205C534A00B4E0AB /* Gnomes */,
 				ABE5BA2C205C534A00B4E0AB /* GnomesTests */,
 				ABE5BA16205C534A00B4E0AB /* Products */,
+				F176EB9C969F50B60F03AF50 /* Pods */,
+				EBE898ABE3A355A10F4A2CD7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				ABE5BA43205C56CE00B4E0AB /* Extensions */,
+				AB9D5628205E463000CA9B9F /* GnomeFilter.swift */,
+				AB9D562A205E465800CA9B9F /* GnomeListDetail.swift */,
 			);
 			path = Additionals;
 			sourceTree = "<group>";
@@ -205,6 +225,7 @@
 		ABE5BA43205C56CE00B4E0AB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AB9D562C205E4EE100CA9B9F /* UIAlertController+Gnomes.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -219,6 +240,26 @@
 			path = "Custom Views";
 			sourceTree = "<group>";
 		};
+		EBE898ABE3A355A10F4A2CD7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70B1E184AC1C836AEBEC299D /* Pods_Gnomes.framework */,
+				78E119E520601ABE393C0568 /* Pods_GnomesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F176EB9C969F50B60F03AF50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				87910BAE5EC53B752A973C45 /* Pods-Gnomes.debug.xcconfig */,
+				BE4A3445EACD66F8ED313BB2 /* Pods-Gnomes.release.xcconfig */,
+				EEC2C508B3BEEE7F36842179 /* Pods-GnomesTests.debug.xcconfig */,
+				823C22E4B343BF47C16A82ED /* Pods-GnomesTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,9 +267,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABE5BA32205C534A00B4E0AB /* Build configuration list for PBXNativeTarget "Gnomes" */;
 			buildPhases = (
+				479D6873181770729EAB2EDF /* [CP] Check Pods Manifest.lock */,
 				ABE5BA11205C534A00B4E0AB /* Sources */,
 				ABE5BA12205C534A00B4E0AB /* Frameworks */,
 				ABE5BA13205C534A00B4E0AB /* Resources */,
+				50D2745B79D8CB1D78E2BA47 /* [CP] Embed Pods Frameworks */,
+				1FA5C4BA1ABA74915F15862A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -243,9 +287,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABE5BA35205C534A00B4E0AB /* Build configuration list for PBXNativeTarget "GnomesTests" */;
 			buildPhases = (
+				DAC7637621EC128423FD32A6 /* [CP] Check Pods Manifest.lock */,
 				ABE5BA25205C534A00B4E0AB /* Sources */,
 				ABE5BA26205C534A00B4E0AB /* Frameworks */,
 				ABE5BA27205C534A00B4E0AB /* Resources */,
+				37BB35524677C83BDAA7E7AE /* [CP] Embed Pods Frameworks */,
+				D63FD1E2D826A2A32A2C1AF6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,6 +365,114 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1FA5C4BA1ABA74915F15862A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gnomes/Pods-Gnomes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37BB35524677C83BDAA7E7AE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GnomesTests/Pods-GnomesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		479D6873181770729EAB2EDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Gnomes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50D2745B79D8CB1D78E2BA47 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Gnomes/Pods-Gnomes-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gnomes/Pods-Gnomes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D63FD1E2D826A2A32A2C1AF6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GnomesTests/Pods-GnomesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAC7637621EC128423FD32A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GnomesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ABE5BA11205C534A00B4E0AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -330,7 +485,10 @@
 				ABE5BA4A205C63FC00B4E0AB /* Brastlewark.swift in Sources */,
 				ABE5BA57205C830600B4E0AB /* ThumbnailTableViewCell.swift in Sources */,
 				ABE5BA1B205C534A00B4E0AB /* MainViewController.swift in Sources */,
+				AB9D5629205E463000CA9B9F /* GnomeFilter.swift in Sources */,
 				ABE5BA50205C6BDE00B4E0AB /* GnomeTableViewCell.swift in Sources */,
+				AB9D562D205E4EE100CA9B9F /* UIAlertController+Gnomes.swift in Sources */,
+				AB9D562B205E465800CA9B9F /* GnomeListDetail.swift in Sources */,
 				ABE5BA19205C534A00B4E0AB /* AppDelegate.swift in Sources */,
 				ABE5BA55205C81EC00B4E0AB /* GnomeDetailTableViewController.swift in Sources */,
 			);
@@ -483,6 +641,7 @@
 		};
 		ABE5BA33205C534A00B4E0AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87910BAE5EC53B752A973C45 /* Pods-Gnomes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -498,6 +657,7 @@
 		};
 		ABE5BA34205C534A00B4E0AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE4A3445EACD66F8ED313BB2 /* Pods-Gnomes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -513,6 +673,7 @@
 		};
 		ABE5BA36205C534A00B4E0AB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEC2C508B3BEEE7F36842179 /* Pods-GnomesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -529,6 +690,7 @@
 		};
 		ABE5BA37205C534A00B4E0AB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 823C22E4B343BF47C16A82ED /* Pods-GnomesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

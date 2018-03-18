@@ -19,6 +19,7 @@ class Brastlewark: Mappable {
     
     func mapping(map: Map) {
         gnomes <- map["Brastlewark"]
+        Brastlewark.shared = self
     }
     
     func gnome(by gnomeName: String?) -> Gnome? {
@@ -26,8 +27,12 @@ class Brastlewark: Mappable {
             return nil
         }
         
-        return gnomes.filter { (gnome) -> Bool in
-            return gnome.name == gnomeName
-        }.first
+        for gnome in gnomes {
+            if gnome.name == gnomeName {
+                return gnome
+            }
+        }
+        
+        return nil
     }
 }

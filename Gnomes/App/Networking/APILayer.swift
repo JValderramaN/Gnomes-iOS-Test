@@ -20,7 +20,6 @@ class APILayer {
         Alamofire.request(url).responseObject { (response: DataResponse<Brastlewark>) in
 
             guard let brastlewark = response.result.value else {
-                print("NO GNOMES THIS TIME!")
                 complationHandler(nil, response.error)
                 return
             }

@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum GnomeListDetail {
-    case professions
-    case friends
-}
-
 class GnomeDetailTableViewController: UITableViewController {
     
     let showGnomeListDetailSegueIdentifier = "showGnomeListDetailSegueIdentifier"
