@@ -21,16 +21,25 @@ class GnomesTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    // Asynchronous test: success fast, failure slow
+    func testValidBrastlewarkData() {
+        // Given
+        let promise = expectation(description: "Brastlewark has gnomes")
+        
+        // When
+        APILayer.getBrastlewarkData { (brastlewarkObject, error) in
+            if let error = error {
+                XCTFail("Error: \(error.localizedDescription)")
+                return
+            } else if let brastlewark: Brastlewark = brastlewarkObject as? Brastlewark,
+                let gnomes = brastlewark.gnomes, !gnomes.isEmpty {
+                promise.fulfill()
+            } else {
+                XCTFail("There is no data")
+            }
         }
+        
+        // Then
+        waitForExpectations(timeout: 5, handler: nil)
     }
-    
 }
