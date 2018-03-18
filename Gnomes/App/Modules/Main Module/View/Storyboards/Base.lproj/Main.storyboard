@@ -70,6 +70,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ule-C7-Ncq"/>
+                    <connections>
+                        <outlet property="logoImageView" destination="WDY-24-bR3" id="KcJ-dt-qzl"/>
+                        <outlet property="startButton" destination="DOW-Zs-41c" id="V4g-OH-z87"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -228,7 +232,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gnome" width="128" height="128"/>
+        <image name="gnome" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dRZ-SU-tyD"/>
