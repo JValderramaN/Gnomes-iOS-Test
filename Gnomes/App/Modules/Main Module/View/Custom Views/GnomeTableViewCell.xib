@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Palatino.ttc">
+            <string>Palatino-Roman</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -20,53 +25,96 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ann-Yk-7tt">
-                        <rect key="frame" x="107" y="10" width="89" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="107" y="10" width="86" height="19"/>
+                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                        </variation>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="sST-8J-o5B">
-                        <rect key="frame" x="2" y="47.5" width="100" height="140"/>
+                        <rect key="frame" x="2" y="5" width="100" height="224.5"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="140" id="41e-Fd-ofE"/>
-                            <constraint firstAttribute="width" constant="100" id="jiB-Au-9b0"/>
+                            <constraint firstAttribute="width" constant="100" id="jiB-Au-9b0">
+                                <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                            </constraint>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Agq-0h-7wF">
-                        <rect key="frame" x="107" y="41" width="89" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="107" y="39" width="86" height="19"/>
+                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZn-Gk-Udf">
-                        <rect key="frame" x="107" y="72" width="89" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="107" y="68" width="86" height="19"/>
+                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Height" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmJ-N3-q4c">
-                        <rect key="frame" x="107" y="103" width="89" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="107" y="97" width="86" height="19"/>
+                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hair Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kh6-wk-Gqg">
-                        <rect key="frame" x="107" y="134" width="89" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="107" y="126" width="86" height="19"/>
+                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Professions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7Q-AU-twh">
-                        <rect key="frame" x="107" y="165" width="89" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="107" y="155" width="86" height="19"/>
+                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzx-v6-2A2">
-                        <rect key="frame" x="107" y="196" width="89" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="107" y="184" width="86" height="19"/>
+                        <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="25"/>
+                        </variation>
                     </label>
                 </subviews>
                 <constraints>
@@ -86,6 +134,7 @@
                     <constraint firstItem="Agq-0h-7wF" firstAttribute="leading" secondItem="Ann-Yk-7tt" secondAttribute="leading" id="YLs-hO-Rdy"/>
                     <constraint firstItem="qzx-v6-2A2" firstAttribute="trailing" secondItem="Ann-Yk-7tt" secondAttribute="trailing" id="YRr-7m-Isn"/>
                     <constraint firstItem="qzx-v6-2A2" firstAttribute="top" secondItem="d7Q-AU-twh" secondAttribute="bottom" constant="10" id="Z4M-v0-yV5"/>
+                    <constraint firstItem="sST-8J-o5B" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="ZKl-SD-JFy"/>
                     <constraint firstItem="d7Q-AU-twh" firstAttribute="trailing" secondItem="Ann-Yk-7tt" secondAttribute="trailing" id="ZaE-lm-8Ah"/>
                     <constraint firstItem="sST-8J-o5B" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aIc-06-DEk"/>
                     <constraint firstItem="NZn-Gk-Udf" firstAttribute="leading" secondItem="Ann-Yk-7tt" secondAttribute="leading" id="g01-CA-2m2"/>
@@ -93,6 +142,7 @@
                     <constraint firstItem="fmJ-N3-q4c" firstAttribute="trailing" secondItem="Ann-Yk-7tt" secondAttribute="trailing" id="tGB-iD-M2Z"/>
                     <constraint firstItem="fmJ-N3-q4c" firstAttribute="top" secondItem="NZn-Gk-Udf" secondAttribute="bottom" constant="10" id="upC-4T-6gh"/>
                     <constraint firstItem="d7Q-AU-twh" firstAttribute="leading" secondItem="Ann-Yk-7tt" secondAttribute="leading" id="wG4-H9-h9f"/>
+                    <constraint firstAttribute="bottom" secondItem="sST-8J-o5B" secondAttribute="bottom" constant="5" id="y46-Op-yLL"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,8 +32,12 @@
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gnome" translatesAutoresizingMaskIntoConstraints="NO" id="RkX-ab-1HW">
-                                <rect key="frame" x="94" y="240" width="187.5" height="187.5"/>
+                                <rect key="frame" x="124" y="270" width="128" height="128"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="128" id="EKN-6L-U47">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="128"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="250"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" secondItem="RkX-ab-1HW" secondAttribute="height" multiplier="1:1" id="eBd-Xm-BPQ"/>
                                 </constraints>
                             </imageView>
@@ -42,7 +45,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="AYS-r2-zMI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="3lo-vN-aNw"/>
-                            <constraint firstItem="RkX-ab-1HW" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.5" id="5Wr-bK-Dwp"/>
                             <constraint firstItem="RkX-ab-1HW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="FR1-8i-F0q"/>
                             <constraint firstItem="RkX-ab-1HW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="QLC-Pe-Y8b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AYS-r2-zMI" secondAttribute="bottom" constant="20" id="YU8-Wu-rO2"/>
@@ -56,6 +58,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gnome" width="128" height="128"/>
+        <image name="gnome" width="42" height="42"/>
     </resources>
 </document>

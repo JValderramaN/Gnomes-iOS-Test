@@ -41,23 +41,31 @@ class GnomeDetailTableViewController: UITableViewController {
         }
         
         switch indexPath.row {
-        case 1:
-            cell.textLabel?.text = "ID: \(gnome.id ?? 0)"
+        case 1:            
+            cell.textLabel?.text = NSLocalizedString("ID", comment: "")
+            cell.detailTextLabel?.text = "\(gnome.id ?? 0)"
         case 2:
-            cell.textLabel?.text = "NAME: \(gnome.name ?? "")"
+            cell.textLabel?.text = NSLocalizedString("NAME", comment: "")
+            cell.detailTextLabel?.text = "\(gnome.name ?? "")"
         case 3:
-            cell.textLabel?.text = "AGE: \(gnome.age ?? 0)"
+            cell.textLabel?.text = NSLocalizedString("AGE", comment: "")
+            cell.detailTextLabel?.text = "\(gnome.age ?? 0)"
         case 4:
-            cell.textLabel?.text = "WEIGHT: \(gnome.weight ?? 0)"
+            cell.textLabel?.text = NSLocalizedString("WEIGHT", comment: "")
+            cell.detailTextLabel?.text = "\(gnome.weight ?? 0)"
         case 5:
-            cell.textLabel?.text = "HEIGHT: \(gnome.height ?? 0)"
+            cell.textLabel?.text = NSLocalizedString("HEIGHT", comment: "")
+            cell.detailTextLabel?.text = "\(gnome.height ?? 0)"
         case 6:
-            cell.textLabel?.text = "HAIR COLOR: \(gnome.hairColor ?? "")"
+            cell.textLabel?.text = NSLocalizedString("HAIR COLOR", comment: "")
+            cell.detailTextLabel?.text = "\(gnome.hairColor ?? "")"
         case 7:
-            cell.textLabel?.text = "PROFESSIONS: \(gnome.professions?.count ?? 0)"
+            cell.textLabel?.text = NSLocalizedString("PROFESSIONS", comment: "")
+            cell.detailTextLabel?.text = "\(gnome.professions?.count ?? 0)"
             cell.accessoryType = .detailDisclosureButton
         case 8:
-            cell.textLabel?.text = "FRIENDS: \(gnome.friends?.count ?? 0)"
+            cell.textLabel?.text = NSLocalizedString("FRIENDS", comment: "")
+            cell.detailTextLabel?.text = "\(gnome.friends?.count ?? 0)"
             cell.accessoryType = .detailDisclosureButton
         default:
             guard let thumbnailCell = tableView.dequeueReusableCell(withIdentifier: thumbnailCellIdentifier, for: indexPath) as? ThumbnailTableViewCell, let gnomeThumbnail = gnome.thumbnail else {
@@ -69,6 +77,7 @@ class GnomeDetailTableViewController: UITableViewController {
         }
 
         cell.selectionStyle = .none
+        
         return cell
     }
     

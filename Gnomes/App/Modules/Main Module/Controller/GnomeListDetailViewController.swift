@@ -162,6 +162,7 @@ extension GnomeListDetailViewController: UITableViewDataSource {
         }
         
         cell.textLabel?.text = gnomeListData[indexPath.row]
+        
         cell.accessoryType = gnomeListDetail == .friends ? .detailDisclosureButton : .none
         
         return cell

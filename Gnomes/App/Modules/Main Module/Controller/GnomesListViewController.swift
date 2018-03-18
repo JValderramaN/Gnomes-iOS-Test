@@ -25,7 +25,7 @@ class GnomesListViewController: UIViewController {
         gnomesTableView.register(UINib(nibName: "GnomeTableViewCell", bundle: nil), forCellReuseIdentifier: gnomeCellIdentifier)
 
         configureSearchController()
-        self.title = NSLocalizedString("GNOMES FROM Brastlewark!", comment: "")
+        self.title = "Brastlewark!"
     }
     
     override func viewWillAppear(_ animated: Bool) {
