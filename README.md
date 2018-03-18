@@ -7,4 +7,9 @@ https://cocoapods.org/ <br />
 - Image Cache: <br />
 https://github.com/rs/SDWebImage <br />
 - Networking Library and Wrapper: <br />
-https://github.com/tristanhimmelman/AlamofireObjectMapper <br />
+https://github.com/tristanhimmelman/AlamofireObjectMapper <br /><br /><br />
+- Installing: <br/>
+Download repo<br/>
+In the root folder of the project, do 'pod install'<br/>
+Open 'Gnomes.xcworkspace' file<br/>
+RUN!<br/>
