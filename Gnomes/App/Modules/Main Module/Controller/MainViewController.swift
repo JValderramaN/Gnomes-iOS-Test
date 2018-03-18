@@ -10,8 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet fileprivate weak var logoImageView: UIImageView!
+    @IBOutlet fileprivate weak var startButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

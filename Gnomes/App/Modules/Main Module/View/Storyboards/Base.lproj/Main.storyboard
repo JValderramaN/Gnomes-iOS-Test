@@ -124,7 +124,7 @@
         <!--Gnome Detail Table View Controller-->
         <scene sceneID="PTN-qb-kjJ">
             <objects>
-                <tableViewController id="FdT-UE-NmU" customClass="GnomeDetailTableViewController" customModule="Gnomes" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="GnomeDetailTableViewController" id="FdT-UE-NmU" customClass="GnomeDetailTableViewController" customModule="Gnomes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kZ0-jb-d6l">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -223,7 +223,7 @@
         <!--Gnome List Detail View Controller-->
         <scene sceneID="4se-z8-Yl3">
             <objects>
-                <viewController id="VEz-z0-N6V" customClass="GnomeListDetailViewController" customModule="Gnomes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GnomeListDetailViewController" id="VEz-z0-N6V" customClass="GnomeListDetailViewController" customModule="Gnomes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D5o-0f-HWb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,7 +285,6 @@
         <image name="gnome" width="42" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hZ6-e7-EAx"/>
         <segue reference="jkj-ef-CGF"/>
     </inferredMetricsTieBreakers>
 </document>

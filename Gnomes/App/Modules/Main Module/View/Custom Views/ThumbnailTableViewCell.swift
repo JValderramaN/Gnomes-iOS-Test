@@ -13,7 +13,7 @@ let thumbnailCellIdentifier = "ThumbnailTableViewCell"
 
 class ThumbnailTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet fileprivate weak var thumbnailImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

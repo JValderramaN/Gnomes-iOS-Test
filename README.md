@@ -1,0 +1,10 @@
+# Gnomes iOS Test
+
+- Universal App: iOS 9+ Xcode 8.0+ Swift 3+<br />
+Adaptable to iPad/iPhone and tested on real device iPhone 7 iOS 11.2.6
+- Dependencies: <br/>
+https://cocoapods.org/ <br />
+- Image Cache: <br />
+https://github.com/rs/SDWebImage <br />
+- Networking Library and Wrapper: <br />
+https://github.com/tristanhimmelman/AlamofireObjectMapper <br />

@@ -8,14 +8,20 @@
 
 import UIKit
 
+let gnomeDetailTableViewControllerStoryboardID = "GnomeDetailTableViewController"
+
+/// Class used to show Gnome detail
 class GnomeDetailTableViewController: UITableViewController {
     
-    let showGnomeListDetailSegueIdentifier = "showGnomeListDetailSegueIdentifier"
+    fileprivate let showGnomeListDetailSegueIdentifier = "showGnomeListDetailSegueIdentifier"
     var gnome: Gnome!
-    var gnomeListDetail: GnomeListDetail?
+    fileprivate var gnomeListDetail: GnomeListDetail?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if (traitCollection.forceTouchCapability == .available) {
+            registerForPreviewing(with: self, sourceView: view)
+        }
         self.title = gnome.name
     }
 
@@ -27,6 +33,19 @@ class GnomeDetailTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    fileprivate func determineGnomeListDetail(by indexPath: IndexPath, andPerfomSegue: Bool = true) {
+        switch indexPath.row {
+        case 7:
+            gnomeListDetail = .professions
+            andPerfomSegue ? performSegue(withIdentifier: showGnomeListDetailSegueIdentifier, sender: nil) : ()
+        case 8:
+            gnomeListDetail = .friends
+            andPerfomSegue ? performSegue(withIdentifier: showGnomeListDetailSegueIdentifier, sender: nil) : ()
+        default:
+            gnomeListDetail = nil
+        }
     }
 
     // MARK: - Table view data source
@@ -88,16 +107,7 @@ class GnomeDetailTableViewController: UITableViewController {
     // MARK: - Table view delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 7:
-            gnomeListDetail = .professions
-            performSegue(withIdentifier: showGnomeListDetailSegueIdentifier, sender: nil)
-        case 8:
-            gnomeListDetail = .friends
-            performSegue(withIdentifier: showGnomeListDetailSegueIdentifier, sender: nil)
-        default:
-            gnomeListDetail = nil
-        }
+        determineGnomeListDetail(by: indexPath)
     }
     
     // MARK: - Navigation
@@ -111,5 +121,33 @@ class GnomeDetailTableViewController: UITableViewController {
         
         gnomeListDetailViewController.gnomeListDetail = gnomeListDetail
         gnomeListDetailViewController.gnomeListData = gnomeListDetail == .professions ? gnome.professions : gnome.friends
+    }
+}
+
+// MARK: - UIViewControllerPreviewingDelegate
+
+extension GnomeDetailTableViewController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        self.navigationController?.pushViewController(viewControllerToCommit, animated: true)
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = tableView.indexPathForRow(at: location),
+            let cell = tableView.cellForRow(at: indexPath) else { return nil }
+        
+        determineGnomeListDetail(by: indexPath, andPerfomSegue: false)
+        
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: gnomeListDetailViewControllerStoryboardID) as? GnomeListDetailViewController,
+            let gnomeListDetail = gnomeListDetail else { return nil }
+        
+        detailVC.gnomeListDetail = gnomeListDetail
+        detailVC.gnomeListData = gnomeListDetail == .professions ? gnome.professions : gnome.friends
+        detailVC.preferredContentSize = CGSize(width: 0.0, height: 0.0)
+        
+        previewingContext.sourceRect = cell.frame
+        
+        return detailVC
     }
 }

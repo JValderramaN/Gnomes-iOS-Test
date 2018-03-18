@@ -12,11 +12,11 @@ class GnomesListViewController: UIViewController {
     
     @IBOutlet fileprivate weak var gnomesTableView: UITableView!
     
-    let showGnomeDetailSegueIdentifier = "showGnomeDetail"
-    var brastlewark: Brastlewark?
-    var filteredGnomes = [Gnome]()
-    var selectedGnome: Gnome?
-    let searchController = UISearchController(searchResultsController: nil)
+    fileprivate let showGnomeDetailSegueIdentifier = "showGnomeDetail"    
+    fileprivate var brastlewark: Brastlewark?
+    fileprivate var filteredGnomes = [Gnome]()
+    fileprivate var selectedGnome: Gnome?
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,11 @@ class GnomesListViewController: UIViewController {
         gnomesTableView.register(UINib(nibName: "GnomeTableViewCell", bundle: nil), forCellReuseIdentifier: gnomeCellIdentifier)
 
         configureSearchController()
+        
+        if (traitCollection.forceTouchCapability == .available) {
+            registerForPreviewing(with: self, sourceView: view)
+        }
+        
         self.title = "Brastlewark!"
     }
     
@@ -96,7 +101,7 @@ class GnomesListViewController: UIViewController {
     
     // MARK: - Search Functionality
     
-    func filterContentForSearchText(_ searchText: String, scope: String = GnomeFilter.all.description) {
+    fileprivate func filterContentForSearchText(_ searchText: String, scope: String = GnomeFilter.all.description) {
         guard let gnomes = brastlewark?.gnomes else {
             return
         }
@@ -128,11 +133,11 @@ class GnomesListViewController: UIViewController {
         gnomesTableView.reloadData()
     }
     
-    func searchBarIsEmpty() -> Bool {
+    fileprivate func searchBarIsEmpty() -> Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
     
-    func isFiltering() -> Bool {
+    fileprivate func isFiltering() -> Bool {
         let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
         return searchController.isActive && (!searchBarIsEmpty() || searchBarScopeIsFiltering)
     }
@@ -183,5 +188,29 @@ extension GnomesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedGnome = isFiltering() ? filteredGnomes[indexPath.row] : self.brastlewark?.gnomes?[indexPath.row]
         performSegue(withIdentifier: showGnomeDetailSegueIdentifier, sender: nil)
+    }
+}
+
+// MARK: - UIViewControllerPreviewingDelegate
+
+extension GnomesListViewController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        self.navigationController?.pushViewController(viewControllerToCommit, animated: true)
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = gnomesTableView.indexPathForRow(at: location),
+            let cell = gnomesTableView.cellForRow(at: indexPath),
+            let detailVC = storyboard?.instantiateViewController(withIdentifier: gnomeDetailTableViewControllerStoryboardID) as? GnomeDetailTableViewController else { return nil }
+        
+        selectedGnome = isFiltering() ? filteredGnomes[indexPath.row] : self.brastlewark?.gnomes?[indexPath.row]
+        detailVC.gnome = selectedGnome
+        detailVC.preferredContentSize = CGSize(width: 0.0, height: 0.0)
+        
+        previewingContext.sourceRect = cell.frame
+        
+        return detailVC
     }
 }

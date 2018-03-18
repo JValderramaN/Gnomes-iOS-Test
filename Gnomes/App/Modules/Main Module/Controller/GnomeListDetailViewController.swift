@@ -8,15 +8,18 @@
 
 import UIKit
 
+let gnomeListDetailViewControllerStoryboardID = "GnomeListDetailViewController"
+
+/// Class used to show gnome's Professions/Friends
 class GnomeListDetailViewController: UIViewController {
     
-    @IBOutlet weak var listDataTableView: UITableView!
-    let searchController = UISearchController(searchResultsController: nil)
-    let showGnomeDetailSegueIdentifier = "showGnomeDetail"
+    @IBOutlet fileprivate weak var listDataTableView: UITableView!
+    fileprivate let searchController = UISearchController(searchResultsController: nil)
+    fileprivate let showGnomeDetailSegueIdentifier = "showGnomeDetail"
     var gnomeListDetail: GnomeListDetail!
     var gnomeListData: [String]?
-    var filteredListData = [String]()
-    var selectedGnome: Gnome?
+    fileprivate var filteredListData = [String]()
+    fileprivate var selectedGnome: Gnome?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,10 @@ class GnomeListDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.title = NSLocalizedString(gnomeListDetail == .friends ? "Friends" : "Professions", comment: "")
         configureSearchController()
+        
+        if (gnomeListDetail == .friends && traitCollection.forceTouchCapability == .available) {
+            registerForPreviewing(with: self, sourceView: view)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,7 +85,7 @@ class GnomeListDetailViewController: UIViewController {
     
     // MARK: - Search Functionality
     
-    func filterContentForSearchText(_ searchText: String, scope: String? = GnomeFilter.all.description) {
+    fileprivate func filterContentForSearchText(_ searchText: String, scope: String? = GnomeFilter.all.description) {
         guard let gnomeListData = gnomeListData else {
             return
         }
@@ -117,11 +124,11 @@ class GnomeListDetailViewController: UIViewController {
         listDataTableView.reloadData()
     }
     
-    func searchBarIsEmpty() -> Bool {
+    fileprivate func searchBarIsEmpty() -> Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
     
-    func isFiltering() -> Bool {
+    fileprivate func isFiltering() -> Bool {
         let searchBarScopeIsFiltering = searchController.searchBar.selectedScopeButtonIndex != 0
         return searchController.isActive && (!searchBarIsEmpty() || searchBarScopeIsFiltering)
     }
@@ -180,5 +187,30 @@ extension GnomeListDetailViewController: UITableViewDelegate {
         selectedGnome = Brastlewark.shared?.gnome(by: isFiltering() ?
             filteredListData[indexPath.row] : gnomeListData?[indexPath.row])
         performSegue(withIdentifier: showGnomeDetailSegueIdentifier, sender: nil)
+    }
+}
+
+// MARK: - UIViewControllerPreviewingDelegate
+
+extension GnomeListDetailViewController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        self.navigationController?.pushViewController(viewControllerToCommit, animated: true)
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = listDataTableView.indexPathForRow(at: location),
+            let cell = listDataTableView.cellForRow(at: indexPath),
+            let detailVC = storyboard?.instantiateViewController(withIdentifier: gnomeDetailTableViewControllerStoryboardID) as? GnomeDetailTableViewController else { return nil }
+        
+        selectedGnome = Brastlewark.shared?.gnome(by: isFiltering() ?
+            filteredListData[indexPath.row] : gnomeListData?[indexPath.row])
+        detailVC.gnome = selectedGnome
+        detailVC.preferredContentSize = CGSize(width: 0.0, height: 0.0)
+        
+        previewingContext.sourceRect = cell.frame
+        
+        return detailVC
     }
 }
