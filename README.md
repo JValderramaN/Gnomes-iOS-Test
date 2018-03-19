@@ -12,4 +12,7 @@ https://github.com/tristanhimmelman/AlamofireObjectMapper <br /><br /><br />
 Download repo<br/>
 In the root folder of the project, do 'pod install'<br/>
 Open 'Gnomes.xcworkspace' file<br/>
-RUN!<br/>
+RUN!<br/><br/><br/>
+
+
+<a href="https://github.com/JValderramaN/Gnomes-iOS-Test/blob/master/showcase.gif"><img src="https://github.com/JValderramaN/Gnomes-iOS-Test/blob/master/showcase.gif" title="Showcase Gnomes!"/></a>
