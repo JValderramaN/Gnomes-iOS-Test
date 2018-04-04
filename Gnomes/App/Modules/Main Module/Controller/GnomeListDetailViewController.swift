@@ -16,10 +16,11 @@ class GnomeListDetailViewController: UIViewController {
     @IBOutlet fileprivate weak var listDataTableView: UITableView!
     fileprivate let searchController = UISearchController(searchResultsController: nil)
     fileprivate let showGnomeDetailSegueIdentifier = "showGnomeDetail"
-    var gnomeListDetail: GnomeListDetail!
-    var gnomeListData: [String]?
+    fileprivate var previewingContext: UIViewControllerPreviewing!
     fileprivate var filteredListData = [String]()
     fileprivate var selectedGnome: Gnome?
+    var gnomeListDetail: GnomeListDetail!
+    var gnomeListData: [String]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class GnomeListDetailViewController: UIViewController {
         configureSearchController()
         
         if (gnomeListDetail == .friends && traitCollection.forceTouchCapability == .available) {
-            registerForPreviewing(with: self, sourceView: view)
+            previewingContext = registerForPreviewing(with: self, sourceView: listDataTableView)
         }
     }
     
@@ -60,6 +61,7 @@ class GnomeListDetailViewController: UIViewController {
             listDataTableView.tableHeaderView = searchController.searchBar
         }
         
+        searchController.searchBar.returnKeyType = .done
         searchController.searchBar.placeholder = NSLocalizedString(
             gnomeListDetail == .friends ? "Search Friend" : "Search Profession", comment: "")
         definesPresentationContext = true
@@ -67,6 +69,7 @@ class GnomeListDetailViewController: UIViewController {
         // Setup the Scope Bar
         if gnomeListDetail == .friends {
             searchController.searchBar.scopeButtonTitles = [GnomeFilter.all.description, GnomeFilter.haveFriends.description, GnomeFilter.haveProfessions.description, GnomeFilter.centenary.description]
+            searchController.delegate = self
         }
         
         searchController.searchBar.delegate = self
@@ -151,6 +154,21 @@ extension GnomeListDetailViewController: UISearchResultsUpdating {
         let searchBar = searchController.searchBar
         let scope = searchBar.scopeButtonTitles?[searchBar.selectedScopeButtonIndex]
         filterContentForSearchText(searchController.searchBar.text!, scope: scope)
+    }
+}
+
+// MARK: - UISearchControllerDelegate
+
+extension GnomeListDetailViewController: UISearchControllerDelegate {
+    
+    func didPresentSearchController(_ searchController: UISearchController) {
+        unregisterForPreviewing(withContext: previewingContext)
+        previewingContext = searchController.registerForPreviewing(with: self, sourceView: listDataTableView)
+    }
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        searchController.unregisterForPreviewing(withContext: previewingContext)
+        previewingContext = registerForPreviewing(with: self, sourceView: listDataTableView)
     }
 }
 

@@ -14,13 +14,13 @@ let gnomeDetailTableViewControllerStoryboardID = "GnomeDetailTableViewController
 class GnomeDetailTableViewController: UITableViewController {
     
     fileprivate let showGnomeListDetailSegueIdentifier = "showGnomeListDetailSegueIdentifier"
-    var gnome: Gnome!
     fileprivate var gnomeListDetail: GnomeListDetail?
+    var gnome: Gnome!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         if (traitCollection.forceTouchCapability == .available) {
-            registerForPreviewing(with: self, sourceView: view)
+            registerForPreviewing(with: self, sourceView: tableView)
         }
         self.title = gnome.name
     }

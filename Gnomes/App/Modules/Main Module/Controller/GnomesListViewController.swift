@@ -17,7 +17,8 @@ class GnomesListViewController: UIViewController {
     fileprivate var filteredGnomes = [Gnome]()
     fileprivate var selectedGnome: Gnome?
     fileprivate let searchController = UISearchController(searchResultsController: nil)
-
+    fileprivate var previewingContext: UIViewControllerPreviewing!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +28,7 @@ class GnomesListViewController: UIViewController {
         configureSearchController()
         
         if (traitCollection.forceTouchCapability == .available) {
-            registerForPreviewing(with: self, sourceView: view)
+            previewingContext = registerForPreviewing(with: self, sourceView: gnomesTableView)
         }
         
         self.title = "Brastlewark!"
@@ -66,6 +67,7 @@ class GnomesListViewController: UIViewController {
     fileprivate func configureSearchController() {
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
+        searchController.delegate = self
         
         if #available(iOS 9.1, *) {
             searchController.obscuresBackgroundDuringPresentation = false
@@ -80,6 +82,7 @@ class GnomesListViewController: UIViewController {
             gnomesTableView.tableHeaderView = searchController.searchBar
         }
         
+        searchController.searchBar.returnKeyType = .done
         searchController.searchBar.placeholder = NSLocalizedString("Search Gnomes!", comment: "")
         definesPresentationContext = true
         
@@ -143,7 +146,7 @@ class GnomesListViewController: UIViewController {
     }
 }
 
-// MARK: - UISearchBar Delegate
+// MARK: - UISearchBarDelegate
 
 extension GnomesListViewController: UISearchBarDelegate {
     
@@ -152,7 +155,22 @@ extension GnomesListViewController: UISearchBarDelegate {
     }
 }
 
-// MARK: - UISearchResultsUpdating Delegate
+// MARK: - UISearchControllerDelegate
+
+extension GnomesListViewController: UISearchControllerDelegate {
+    
+    func didPresentSearchController(_ searchController: UISearchController) {
+        unregisterForPreviewing(withContext: previewingContext)
+        previewingContext = searchController.registerForPreviewing(with: self, sourceView: gnomesTableView)
+    }
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        searchController.unregisterForPreviewing(withContext: previewingContext)
+        previewingContext = registerForPreviewing(with: self, sourceView: gnomesTableView)
+    }
+}
+
+// MARK: - UISearchResultsUpdating
 
 extension GnomesListViewController: UISearchResultsUpdating {
     
@@ -203,14 +221,15 @@ extension GnomesListViewController: UIViewControllerPreviewingDelegate {
         
         guard let indexPath = gnomesTableView.indexPathForRow(at: location),
             let cell = gnomesTableView.cellForRow(at: indexPath),
-            let detailVC = storyboard?.instantiateViewController(withIdentifier: gnomeDetailTableViewControllerStoryboardID) as? GnomeDetailTableViewController else { return nil }
+            let detailVC = storyboard?.instantiateViewController(withIdentifier: gnomeDetailTableViewControllerStoryboardID) as? GnomeDetailTableViewController
+            else { return nil }
         
         selectedGnome = isFiltering() ? filteredGnomes[indexPath.row] : self.brastlewark?.gnomes?[indexPath.row]
         detailVC.gnome = selectedGnome
         detailVC.preferredContentSize = CGSize(width: 0.0, height: 0.0)
-        
+
         previewingContext.sourceRect = cell.frame
-        
+
         return detailVC
     }
 }
